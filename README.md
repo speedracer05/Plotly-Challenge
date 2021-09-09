@@ -1,9 +1,29 @@
-# Plot.ly Homework - Belly Button Biodiversity
+# Plot.ly Challenge
 
-![Bacteria by filterforge.com](Images/bacteria.jpg)
+## Description
+In this project challenge, I have built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
 
-In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
+## Table of Contents
+-   [Description](#description)
+-   [Installation and Deployment](#installation-and-deployment)
+-   [D3 Visualization](#d3-visualization)
+-   [Technology](#technology)
+-   [Resources](#resources)
+-   [Contact](#contact)
 
+## Installation and Deployment
+1. 
+
+## D3 Visualizaton
+A basic HTML page was created, showing the data that was extracted, and presented in table form.
+
+## Technology
+`JavaScript`
+`HTML`
+`CSS`
+
+## Development Notes
+I reviewed the dataset saved as
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
 ## Step 1: Plotly
