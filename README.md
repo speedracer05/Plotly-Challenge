@@ -12,7 +12,7 @@ In this project challenge, I have built an interactive dashboard to explore the 
 -   [Contact](#contact)
 
 ## Installation and Deployment
-1. 
+1. `conda install -c conda-forge nodejs`
 
 ## D3 Visualizaton
 A basic HTML page was created, showing the data that was extracted, and presented in table form.
