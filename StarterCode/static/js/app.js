@@ -48,8 +48,33 @@ function buildCharts(sample) {
       text: sampleData.otu_labels.slice(0, 10).reverse(),
       orientation: 'h',
       marker: {
-        color: 'RdBu'
+        color: 'rgb(62,87,150)'
       }
     }];
+    
+    Plotly.newPlot('bar', data);
+
+    // Create bubble chart 
+    var trace1 = {
+        x: sampleData.otu_ids,
+        y: sampleData.sample_values,
+        mode: 'markers',
+        text: sampleData.otu_labels,
+        marker: {
+            color: sampleData.otu_ids,
+            size: sampleData.sample_values,
+            colorscale: 'Portland'
+        }
+    };
+
+    var data2 = [trace1];
+
+    var layout2 = {
+        font: { color: "black", family: "Arial" },
+        title: 'Bacteria Found in Belly Button: Bubble Chart',
+        showlegend: false,
+    };
+
+    Plotly.newPlot('bubble', data2, layout2);
   });
 }
