@@ -6,23 +6,15 @@ var select = d3.select("#selDataset");
 // Create function. First instance populates dropdown menu with IDs, takes first ID and draws charts
 function init() {
 
-  // Reset previous data
-  resetData();
-
   // Fetch, read JSON file; store data to variable; 
   d3.json("samples.json").then((response => { 
     var names = response.names;
 
     // Dropdown menu populated with id#s
     names.forEach((name => {
-      select.append("option");
-        option.text(name)
-
-        // First instantiation, get the first ID
-        var initId = select.property("value", name);
-
-        // Plot charts with first ID
-        plotCharts(initId);
+      select.append("option")
+        .text(name)
+        .property("value", name);
     }));
 
     // Define function names to be used later;
