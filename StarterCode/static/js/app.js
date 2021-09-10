@@ -16,8 +16,13 @@ function init() {
     // Dropdown menu populated with id#s
     names.forEach((name => {
       select.append("option");
-        option.text(name)  ////// add select
-        .property("value", name);
+        option.text(name)
+
+        // First instantiation, get the first ID
+        var initId = select.property("value", name);
+
+        // Plot charts with first ID
+        plotCharts(initId);
     }));
 
     // Define function names to be used later;
