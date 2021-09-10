@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Plot.ly Challenge - Belly Button Biodiversity
 ## UC Davis Data Analytics and Visualization Boot Camp 2021
+=======
+# Plot.ly Challenge
+<img src="Images/Staphylococcus.png">
+>>>>>>> a04cb84250ffb49b6f58e3c42591ded7461a942c
 ## Description
 In this repository, I have built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels. The dashboard is deployed on Github pages, available on this [link](http://TBD).
 
@@ -11,6 +16,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 -   [Resources](#resources)
 -   [Contact](#contact)
 
+<<<<<<< HEAD
 ## Step 1: Plotly
 1. Use the D3 library to read in samples.json.
 2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
@@ -26,6 +32,10 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 4. Display the sample metadata, i.e., an individual's demographic information.
 5. Display each key-value pair from the metadata JSON object somewhere on the page.
 6. Update all of the plots any time that a new sample is selected.
+=======
+## Installation and Deployment
+1. `conda install -c conda-forge nodejs`
+>>>>>>> a04cb84250ffb49b6f58e3c42591ded7461a942c
 
 ## Deployment
 The app was deployed to GitHub Pages, and is available [here](http://TBD).
