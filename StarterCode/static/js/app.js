@@ -20,7 +20,7 @@ function init() {
     // Define function names to be used later;
     buildMetadata(names[0]);
     buildCharts(names[0]);
-    buildGauge(names[0]);
+    // buildGauge(names[0]);    /////////****** To complete later ******////////
   }); // close .then() promise
 
 } // close init() function
@@ -31,7 +31,7 @@ function buildMetadata(sample) {
   console.log(sample)
   d3.json("samples.json").then((response) => {
       var metadata = response.metadata;
-      var siftData = metadata.filter(meta => meta.id == sample)[0];
+      var filteredData  = metadata.filter(meta => meta.id == sample)[0];
       console.log(siftData);
 
       var panel = d3.select("#sample-metadata");
@@ -85,9 +85,19 @@ function buildCharts(sample) {
   };
 
 
-    Plotly.newPlot('bubble', data2, layout2);
-
+  Plotly.newPlot('bubble', data2, layout2);
+  
+  });
 }
+function optionChanged(newSample) {
+
+  buildCharts(newSample);
+  buildMetadata(newSample);
+  buildGauge(newSample);
+}
+
+init();
+
 // Custom Gauge Chart
 /* need to modify */
 // var data = [
