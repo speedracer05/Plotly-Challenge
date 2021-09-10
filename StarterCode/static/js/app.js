@@ -35,12 +35,14 @@ function buildMetadata(sample) {
   });
 }
 
-// Collect samples data
+// Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
   d3.json("samples.json").then((response) => {
     var samples = response.samples;
     var sampleData = samples.filter(button => button.id == sample)[0];
+
     // Create bar chart with hover text; retrieve first 10 items; set chart horizontal
+    // Source: https://plotly.com/javascript/bar-charts/#bar-chart-with-hover-text
     var data = [{
       type: 'bar',
       x: sampleData.sample_values.slice(0, 10).reverse(),
@@ -51,10 +53,10 @@ function buildCharts(sample) {
         color: 'rgb(62,87,150)'
       }
     }];
-    
     Plotly.newPlot('bar', data);
 
-    // Create bubble chart 
+    // Create bubble chart
+    // Source: https://plotly.com/javascript/bubble-charts/#hover-text-on-bubble-charts
     var trace1 = {
         x: sampleData.otu_ids,
         y: sampleData.sample_values,
@@ -69,12 +71,6 @@ function buildCharts(sample) {
 
     var data2 = [trace1];
 
-    var layout2 = {
-        font: { color: "black", family: "Arial" },
-        title: 'Bacteria Found in Belly Button: Bubble Chart',
-        showlegend: false,
-    };
-
-    Plotly.newPlot('bubble', data2, layout2);
+ 
   });
 }
