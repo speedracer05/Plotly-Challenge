@@ -23,6 +23,8 @@ function init() {
     // buildGauge(names[0]);
   })); // close .then() promise
 
+} // close init() function
+
   /* Collect demographic data; loop over object; create a new paragraph for
   each key/value--for demographics panel */
   function buildMetadata(sample) {
