@@ -1,35 +1,35 @@
-// select userinput field
+
+// select html userinput field
 var select = d3.select("#selDataset")
-console.log(select)
+console.log(select);
 
-// Create function to get data from JSON file
-function int() {
+// Fetch, read JSON file; store data to variable; 
+d3.json("samples.json").then((response) => { 
+  var names = response.names;
 
-  d3.json("samples.json").then((response) => {
-    var names = response.names;
+  // Loop to populate Test Subject with id#s
+  names.forEach(name => {
+    select.append("option")
+      .text(name)
+      .property("value", name);
+  });
 
-    names.forEach(name => {
-
-      select.append("option")
-        .text(name)
-        .property("value", name);
-    });
-
-    buildMetadata(names[0]);
-    buildCharts(names[0]);
-    buildGauge(names[0]);
+  // Define function names to be used later; start at index 0
+  buildMetadata(names[0]);
+  buildCharts(names[0]);
+  buildGauge(names[0]);
 });
-}
 
+/* Collect demographic data; loop over object; create a new paragraph for
+each key/value--for demographics panel */
 function buildMetadata(sample) {
 
     d3.json("samples.json").then((response) => {
         var metadata = response.metadata;
-        var filteredData = metadata.filter(meta => meta.id == sample)[0];
-
+        var siftData = metadata.filter(meta => meta.id == sample)[0];
         var panel = d3.select("#sample-metadata");
         panel.html("");
-        Object.entries(filteredData).forEach(([key, value]) => {
+        Object.entries(siftData).forEach(([key, value]) => {
             panel.append("p")
                 .text(`${key}: ${value}`);
         });
