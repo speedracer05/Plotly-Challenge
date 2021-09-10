@@ -1,7 +1,7 @@
 
 // select html userinput field
 var select = d3.select("#selDataset")
-console.log(select);
+// console.log(select);
 
 // Create function. First instance populates dropdown menu with IDs, takes first ID and draws charts
 // function init() {
@@ -27,14 +27,18 @@ console.log(select);
   /* Collect demographic data; loop over object; create a new paragraph for
   each key/value--for demographics panel */
   function buildMetadata(sample) {
+    console.log(sample)
     d3.json("samples.json").then((response) => {
+
         var metadata = response.metadata;
         var siftData = metadata.filter(meta => meta.id == sample)[0];
+        console.log(siftData);
         var panel = d3.select("#sample-metadata");
         panel.html("");
         Object.entries(siftData).forEach(([key, value]) => {
             panel.append("p")
                 .text(`${key}: ${value}`);
+        
         });
     });
   }
