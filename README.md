@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 # Plot.ly Challenge - Belly Button Biodiversity
 ## UC Davis Data Analytics and Visualization Boot Camp 2021
-=======
 # Plot.ly Challenge
 <img src="Images/Staphylococcus.png">
 >>>>>>> a04cb84250ffb49b6f58e3c42591ded7461a942c
