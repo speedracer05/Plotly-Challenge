@@ -5,11 +5,14 @@ console.log(select);
 
 // Create function. First instance populates dropdown menu with IDs, takes first ID and draws charts
 function init() {
+  // Reset all charts and dropdown
+  resetData();
+
   // Fetch, read JSON file; store data to variable; 
-  d3.json("samples.json").then((response) => { 
+  d3.json("samples.json").then((response => { 
     var names = response.names;
 
-    // Loop to populate Test Subject with id#s
+    // Dropdown menu populated with id#s
     names.forEach(name => {
       select.append("option")
         .text(name)
@@ -20,7 +23,7 @@ function init() {
     buildMetadata(names[0]);
     buildCharts(names[0]);
     buildGauge(names[0]);
-  });
+  })); // close .then() promise
 
   /* Collect demographic data; loop over object; create a new paragraph for
   each key/value--for demographics panel */
@@ -36,6 +39,7 @@ function init() {
         });
     });
   }
+} // close init() function
 
 // Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
