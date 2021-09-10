@@ -4,9 +4,7 @@ var select = d3.select("#selDataset")
 console.log(select);
 
 // Create function. First instance populates dropdown menu with IDs, takes first ID and draws charts
-function init() {
-  // Reset all charts and dropdown
-  resetData();
+// function init() {
 
   // Fetch, read JSON file; store data to variable; 
   d3.json("samples.json").then((response => { 
@@ -19,7 +17,8 @@ function init() {
         .property("value", name);
     });
 
-    // Define function names to be used later; start at index 0
+    // Define function names to be used later;
+    // resetData();   // Reset previous data in charts and dropdown
     buildMetadata(names[0]);
     buildCharts(names[0]);
     buildGauge(names[0]);
@@ -39,7 +38,9 @@ function init() {
         });
     });
   }
-} // close init() function
+// } // close init() function
+
+
 
 // Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
