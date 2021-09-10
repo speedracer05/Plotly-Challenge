@@ -58,19 +58,30 @@ function buildCharts(sample) {
     // Create bubble chart
     // Source: https://plotly.com/javascript/bubble-charts/#hover-text-on-bubble-charts
     var trace1 = {
-        x: sampleData.otu_ids,
-        y: sampleData.sample_values,
-        mode: 'markers',
-        text: sampleData.otu_labels,
-        marker: {
-            color: sampleData.otu_ids,
-            size: sampleData.sample_values,
-            colorscale: 'Portland'
-        }
+      x: sampleData.otu_ids,
+      y: sampleData.sample_values,
+      mode: 'markers',
+      text: sampleData.otu_labels,
+      marker: {
+        color: sampleData.otu_ids,
+        size: sampleData.sample_values,
+        colorscale: 'Portland'
+      }
     };
 
     var data2 = [trace1];
+    var layout2 = {
+      font: { color: "black", family: "Helvetica" },
+      title: 'Bacteria Found in Belly Button: Bubble Chart',
+      showlegend: false,
+  };
+  Plotly.newPlot('bubble', data2, layout2);
+  var layout2 = {
+    font: { color: "black", family: "Helvetica" },
+    title: 'Bacteria Found in Belly Button: Bubble Chart',
+    showlegend: false,
+};
 
- 
+Plotly.newPlot('bubble', data2, layout2);
   });
 }
