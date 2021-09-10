@@ -7,21 +7,21 @@ var select = d3.select("#selDataset");
 function init() {
 
   // Fetch, read JSON file; store data to variable; 
-  d3.json("samples.json").then((response => { 
+  d3.json("samples.json").then((response) => { 
     var names = response.names;
 
     // Dropdown menu populated with id#s
-    names.forEach((name => {
+    names.forEach(name => {
       select.append("option")
         .text(name)
         .property("value", name);
-    }));
+    });
 
     // Define function names to be used later;
     buildMetadata(names[0]);
     buildCharts(names[0]);
-    // buildGauge(names[0]);
-  })); // close .then() promise
+    buildGauge(names[0]);
+  }); // close .then() promise
 
 } // close init() function
 
