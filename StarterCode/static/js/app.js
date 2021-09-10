@@ -25,27 +25,23 @@ function init() {
 
 } // close init() function
 
-  /* Collect demographic data; loop over object; create a new paragraph for
-  each key/value--for demographics panel */
-  function buildMetadata(sample) {
-    console.log(sample)
-    d3.json("samples.json").then((response) => {
+/* Collect demographic data; loop over object; create a new paragraph for
+each key/value--for demographics panel */
+function buildMetadata(sample) {
+  console.log(sample)
+  d3.json("samples.json").then((response) => {
+      var metadata = response.metadata;
+      var siftData = metadata.filter(meta => meta.id == sample)[0];
+      console.log(siftData);
 
-        var metadata = response.metadata;
-        var siftData = metadata.filter(meta => meta.id == sample)[0];
-        console.log(siftData);
-        var panel = d3.select("#sample-metadata");
-        panel.html("");
-        Object.entries(siftData).forEach(([key, value]) => {
-            panel.append("p")
-                .text(`${key}: ${value}`);
-        
-        });
-    });
-  }
-// } // close init() function
-
-
+      var panel = d3.select("#sample-metadata");
+      panel.html("");
+      Object.entries(siftData).forEach(([key, value]) => {
+        panel.append("p")
+          .text(`${key}: ${value}`);
+      });
+  });
+}
 
 // Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
@@ -87,15 +83,11 @@ function buildCharts(sample) {
       title: 'Bacteria Found in Belly Button: Bubble Chart',
       showlegend: false,
   };
-  Plotly.newPlot('bubble', data2, layout2);
-  var layout2 = {
-    font: { color: "black", family: "Helvetica" },
-    title: 'Bacteria Found in Belly Button: Bubble Chart',
-    showlegend: false,
-};
 
-Plotly.newPlot('bubble', data2, layout2);
 
+    Plotly.newPlot('bubble', data2, layout2);
+
+}
 // Custom Gauge Chart
 /* need to modify */
 // var data = [
@@ -133,5 +125,3 @@ Plotly.newPlot('bubble', data2, layout2);
 // };
 
 // Plotly.newPlot('myDiv', data, layout);
-  });
-}
