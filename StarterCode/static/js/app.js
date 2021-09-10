@@ -31,7 +31,7 @@ function buildMetadata(sample) {
   console.log(sample)
   d3.json("samples.json").then((response) => {
       var metadata = response.metadata;
-      var filteredData  = metadata.filter(meta => meta.id == sample)[0];
+      var siftData  = metadata.filter(meta => meta.id == sample)[0];
       console.log(siftData);
 
       var panel = d3.select("#sample-metadata");
