@@ -103,6 +103,11 @@ init();
     // Advanced Challenge Assignment (Optional) 
     // Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/ 
     // to plot the weekly washing frequency of the individual.
+function buildGauge(sample) {
+  var metadata = response.metadata;
+  var sampleData = metadata.filter(button => button.id == sample)[0];
+
+  d3.json("data/samples.json").then((response) => {
     var data2 = [
       {
         domain: { x: [0, 1], y: [0, 1] },
@@ -118,8 +123,14 @@ init();
           borderwidth: 2,
           bordercolor: "gray",
           steps: [
-            { range: [0, 250], color: "cyan" },
-            { range: [250, 400], color: "royalblue" }
+            { range: [1, 2], color: "#26d9ff" },
+            { range: [2, 3], color: "#4cb2ff" },
+            { range: [3, 4], color: "#738cff" },
+            { range: [4, 5], color: "#9966ff" },
+            { range: [5, 6], color: "#b24dff" },
+            { range: [6, 7], color: "#cc33ff" },
+            { range: [7, 8], color: "#e619ff" },
+            { range: [8, 9], color: "#ff00ff" },
           ],
           threshold: {
             line: { color: "red", width: 4 },
@@ -139,3 +150,5 @@ init();
     };
 
     Plotly.newPlot('gauge', data, layout);
+  };
+};
