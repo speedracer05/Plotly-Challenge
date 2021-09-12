@@ -40,7 +40,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 7. Update all of the plots any time that a new sample is selected.
 
 ## Deployment
-The app was deployed to GitHub Pages, and is available [here](http://TBD).
+The app was deployed to GitHub Pages, and is available [here](https://speedracer05.github.io/Plotly-Challenge/).
 
 ## Tools and Sources
 `Plot.ly`
