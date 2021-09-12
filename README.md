@@ -8,7 +8,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 
 ## Table of Contents
 -   [Description](#description)
--   [Step 1: Plotly](#step-1:-plotly)
+-   [Step 1: Plotly](#step-1-plotly)
 -   [Deployment](#deployment)
 -   [Tools and Sources](#tools-and-sources)
 -   [Resources](#resources)
