@@ -20,7 +20,7 @@ function init() {
     // Define function names to be used later;
     buildMetadata(names[0]);
     buildCharts(names[0]);
-    // buildGauge(names[0]);    /////////****** To complete later ******////////
+    buildGauge(names[0]);    /////////****** To complete later ******////////
   }); // close .then() promise
 
 } // close init() function
@@ -28,6 +28,7 @@ function init() {
 /* Collect demographic data; loop over object; create a new paragraph for
 each key/value--for demographics panel */
 function buildMetadata(sample) {
+
   console.log(sample)
   d3.json("data/samples.json").then((response) => {
       var metadata = response.metadata;
@@ -45,6 +46,7 @@ function buildMetadata(sample) {
 
 // Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
+
   d3.json("data/samples.json").then((response) => {
     var samples = response.samples;
     var sampleData = samples.filter(button => button.id == sample)[0];
@@ -74,7 +76,7 @@ function buildCharts(sample) {
         color: sampleData.otu_ids,
         size: sampleData.sample_values,
         colorscale: 'Portland'
-      },
+      }
     };
 
     var data2 = [trace1];
@@ -84,33 +86,27 @@ function buildCharts(sample) {
       showlegend: false,
       xaxis: { title: "OTU ID"},
       yaxis: {title: "Sample Value"}
-  };
+    };
 
 
   Plotly.newPlot('bubble', data2, layout2);
   
   });
 }
-function optionChanged(newSample) {
 
-  buildCharts(newSample);
-  buildMetadata(newSample);
-  buildGauge(newSample);
-}
-
-init();
 
     // Advanced Challenge Assignment (Optional) 
     // Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/ 
     // to plot the weekly washing frequency of the individual.
 function buildGauge(sample) {
-  var metadata = response.metadata;
-  var sampleData = metadata.filter(button => button.id == sample)[0];
 
   d3.json("data/samples.json").then((response) => {
-    var data2 = [
-      {
-        domain: { x: [0, 1], y: [0, 1] },
+  var metadata = response.metadata;
+  var washData = metadata.filter(wash => wash.id == sample)[0];
+
+  console.log(washData.wfreq)
+
+    var data3 = {
         type: "indicator",
         mode: "gauge+number+delta",
         value: washData.freq,
@@ -123,6 +119,7 @@ function buildGauge(sample) {
           borderwidth: 2,
           bordercolor: "gray",
           steps: [
+            { range: [0, 1], color: "#0df2ff" },
             { range: [1, 2], color: "#26d9ff" },
             { range: [2, 3], color: "#4cb2ff" },
             { range: [3, 4], color: "#738cff" },
@@ -132,16 +129,15 @@ function buildGauge(sample) {
             { range: [7, 8], color: "#e619ff" },
             { range: [8, 9], color: "#ff00ff" },
           ],
-          threshold: {
-            line: { color: "red", width: 4 },
-            thickness: 0.75,
-            value: 490
-          }
+          // threshold: {
+          //   line: { color: "red", width: 4 },
+          //   thickness: 0.75,
+          //   value: 490
+          // }
         }
-      }
-    ];
-
-    var layout = {
+    };
+    var data3 = [trace]
+    var layout3 = {
       width: 500,
       height: 400,
       margin: { t: 25, r: 25, l: 25, b: 25 },
@@ -149,6 +145,14 @@ function buildGauge(sample) {
       font: { color: "darkblue", family: "Arial" }
     };
 
-    Plotly.newPlot('gauge', data, layout);
-  };
+    Plotly.newPlot('gauge', data3, layout3);
+  });
 };
+function optionChanged(newSample) {
+
+  buildCharts(newSample);
+  buildMetadata(newSample);
+  buildGauge(newSample);
+}
+
+init();
