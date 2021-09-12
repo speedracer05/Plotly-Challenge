@@ -103,15 +103,16 @@ init();
     // Advanced Challenge Assignment (Optional) 
     // Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/ 
     // to plot the weekly washing frequency of the individual.
-    var data = [
+    var data2 = [
       {
+        domain: { x: [0, 1], y: [0, 1] },
         type: "indicator",
         mode: "gauge+number+delta",
-        value: 420,
-        title: { text: "Speed", font: { size: 24 } },
+        value: washData.freq,
+        title: { text: "Belly Button Wash Frequency: Number of Washes", font: { size: 20 } },
         delta: { reference: 400, increasing: { color: "RebeccaPurple" } },
         gauge: {
-          axis: { range: [null, 500], tickwidth: 1, tickcolor: "darkblue" },
+          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
           bar: { color: "darkblue" },
           bgcolor: "white",
           borderwidth: 2,
