@@ -7,7 +7,7 @@ var select = d3.select("#selDataset");
 function init() {
 
   // Fetch, read JSON file; store data to variable; 
-  d3.json("../data/samples.json").then((response) => { 
+  d3.json("data/samples.json").then((response) => { 
     var names = response.names;
 
     // Dropdown menu populated with id#s
@@ -29,7 +29,7 @@ function init() {
 each key/value--for demographics panel */
 function buildMetadata(sample) {
   console.log(sample)
-  d3.json("../data/samples.json").then((response) => {
+  d3.json("data/samples.json").then((response) => {
       var metadata = response.metadata;
       var siftData  = metadata.filter(meta => meta.id == sample)[0];
       console.log(siftData);
@@ -45,7 +45,7 @@ function buildMetadata(sample) {
 
 // Collect Samples data; var SampleData to be used for bar and bubble charts
 function buildCharts(sample) {
-  d3.json("../data/samples.json").then((response) => {
+  d3.json("data/samples.json").then((response) => {
     var samples = response.samples;
     var sampleData = samples.filter(button => button.id == sample)[0];
 
