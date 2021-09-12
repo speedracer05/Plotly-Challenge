@@ -8,7 +8,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 
 ## Table of Contents
 -   [Description](#description)
--   [Step 1: Plotly](#step-1:-plotly)
+-   [Step 1: Plotly](#step-1-plotly)
 -   [Deployment](#deployment)
 -   [Tools and Sources](#tools-and-sources)
 -   [Resources](#resources)
@@ -20,8 +20,8 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
   - Use sample_values as the values for the bar chart.
   - Use otu_ids as the labels for the bar chart.
   - Use otu_labels as the hovertext for the chart
-<p align="center">
-<img src="Images/bar.png">
+<p align="left">
+<img src="static/images/bar.png">
 </p>
 3. Create a bubble chart that displays each sample.
   - Use otu_ids for the x values.
@@ -29,15 +29,16 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
   - Use sample_values for the marker size.
   - Use otu_ids for the marker colors.
   - Use otu_labels for the text values.
-<p align="center">
-  <img src="Images/bubbles.png">
+<p align="left">
+  <img src="static/images/bubbles.png">
 </p>
 4. Display the sample metadata, i.e., an individual's demographic information.
+
 5. Display each key-value pair from the metadata JSON object somewhere on the page.
-<p align="center">
-  <img src="Images/demoPanel.png">
+<p align="left">
+  <img src="static/images/demoPanel.png">
 </p>
-7. Update all of the plots any time that a new sample is selected.
+6. Update all of the plots any time that a new sample is selected.
 
 ## Deployment
 The app was deployed to GitHub Pages, and is available [here](https://speedracer05.github.io/Plotly-Challenge/).
