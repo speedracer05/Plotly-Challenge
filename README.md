@@ -40,7 +40,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
 </p>
 6. Update all of the plots any time that a new sample is selected.
 <p align="left">
-  <img src="statis/images/plotly_dashboard.png">
+  <img src="static/images/plotly_dashboard.png">
 </p>
 
 ## Deployment
