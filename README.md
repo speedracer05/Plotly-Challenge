@@ -29,7 +29,7 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
   - Use sample_values for the marker size.
   - Use otu_ids for the marker colors.
   - Use otu_labels for the text values.
-<p align="center">
+<p align="left">
   <img src="static/images/bubbles.png">
 </p>
 4. Display the sample metadata, i.e., an individual's demographic information.
