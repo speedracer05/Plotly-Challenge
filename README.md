@@ -33,11 +33,12 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
   <img src="static/images/bubbles.png">
 </p>
 4. Display the sample metadata, i.e., an individual's demographic information.
+
 5. Display each key-value pair from the metadata JSON object somewhere on the page.
 <p align="left">
   <img src="static/images/demoPanel.png">
 </p>
-7. Update all of the plots any time that a new sample is selected.
+6. Update all of the plots any time that a new sample is selected.
 
 ## Deployment
 The app was deployed to GitHub Pages, and is available [here](https://speedracer05.github.io/Plotly-Challenge/).
