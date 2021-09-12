@@ -39,6 +39,8 @@ In this repository, I have built an interactive dashboard to explore the [Belly 
   <img src="static/images/demoPanel.png">
 </p>
 6. Update all of the plots any time that a new sample is selected.
+7. <p align="left"
+      <img srce="statis/images/plotly_dashboard.png">
 
 ## Deployment
 The app was deployed to GitHub Pages, and is available [here](https://speedracer05.github.io/Plotly-Challenge/).
