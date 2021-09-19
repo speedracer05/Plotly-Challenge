@@ -1,11 +1,10 @@
 # Plot.ly Challenge - Belly Button Biodiversity
 
-## UC Davis Data Analytics and Visualization Boot Camp 2021
-<img src="/static/images/Staphylococcus.png">
-
-## Description
+### UC Davis Data Analytics and Visualization Boot Camp 2021
 
 In this repository, I have built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels. The dashboard is deployed on Github pages, available on this [link](https://speedracer05.github.io/Plotly-Challenge/).
+
+<img src="/static/images/Staphylococcus.png">
 
 ## Table of Contents
 -   [Description](#description)
