@@ -4,7 +4,7 @@
   <img src="/static/images/Staphylococcus.png">
 </p>
 ## Description
-In this repository, I have built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels. The dashboard is deployed on Github pages, available on this [link](https://speedracer05.github.io/Plotly-Challenge/).
+<p>In this repository, I have built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels. The dashboard is deployed on Github pages, available on this [link](https://speedracer05.github.io/Plotly-Challenge/).</p>
 
 ## Table of Contents
 -   [Description](#description)
